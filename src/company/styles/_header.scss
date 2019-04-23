@@ -14,39 +14,23 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 100px;
+    padding-top: 15px;
+    padding-bottom: 15px;
 
     @include screen(1024px) {
-      height: 75px;
+      padding-top: 0;
+      padding-bottom: 0;
     }
   }
 
   a {
     text-decoration: none;
-    color: #000000;
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 3.82px;
-  }
-
-  .main_logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    span {
-      color: #1b242b;
-      font-size: 35px;
-      font-weight: 700;
-
-      @include screen(1300px) {
-        font-size: 28px;
-      }
-
-      @include screen(480px) {
-        display: none;
-      }
-    }
+    font-weight: 400;
+    @include font-size(14px);
+    line-height: 1;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #252828;
   }
 
   .main_navigation {
@@ -87,61 +71,35 @@
       }
     }
 
+    li {
+
+      margin-left: 25px;
+    }
+
     a {
       position: relative;
-      padding: 0 17%;
+      //padding: 0 17%;
       text-transform: uppercase;
       display: block;
+      white-space: normal;
 
       @include screen(1023px) {
         padding: 0;
       }
 
       &.active {
+        font-weight: 700;
+
         &:after {
           height: 20px;
         }
       }
-
-      &:after {
-        transition: height ease-in-out .3s;
-        content: '';
-        display: block;
-        width: 5px;
-        position: absolute;
-        bottom: -43px;
-        height: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        background-color: #9013fe;
-
-        @include screen(1023px) {
-          display: none;
-        }
-      }
-
-      &:hover {
-        &:after {
-          height: 20px;
-        }
-      }
-    }
-  }
-
-  .main_phone {
-    @include screen(1300px) {
-      display: none;
-    }
-
-    @include screen(1023px) {
-      display: block;
-      font-size: 10px;
     }
   }
 }
 
 //MOBILE NAV BTN
-.nav_button{
+.nav_button {
   display: none;
 
 
@@ -149,6 +107,7 @@
     display: block;
   }
 }
+
 .ham {
   cursor: pointer;
   transition: transform 400ms;
