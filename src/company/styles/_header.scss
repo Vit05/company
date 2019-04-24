@@ -2,12 +2,6 @@
 
 .main_header {
   background-color: #ffffff;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 500;
-  overflow: hidden;
   box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.1);
 
   .cnt {
@@ -18,8 +12,8 @@
     padding-bottom: 15px;
 
     @include screen(1024px) {
-      padding-top: 0;
-      padding-bottom: 0;
+      padding-top: 10px;
+      padding-bottom: 10px;
     }
   }
 
@@ -30,7 +24,7 @@
     line-height: 1;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: #252828;
+    color: $colorTxt;
   }
 
   .main_navigation {
@@ -44,7 +38,7 @@
     @include screen(1023px) {
       width: 100%;
       position: fixed;
-      top: 75px;
+      top: 70px;
       left: 0;
       right: 0;
       bottom: 0;
@@ -61,9 +55,9 @@
       &.in {
         transition: all .3s ease-in-out;
         opacity: 1;
-        height: calc(100% - 75px);
+        height: calc(100% - 70px);
         position: fixed;
-        top: 75px;
+        top: 70px;
         bottom: 0;
         left: 0;
         right: 0;
@@ -72,19 +66,21 @@
     }
 
     li {
-
       margin-left: 25px;
     }
 
     a {
       position: relative;
-      //padding: 0 17%;
       text-transform: uppercase;
       display: block;
       white-space: normal;
 
       @include screen(1023px) {
         padding: 0;
+      }
+
+      &:hover {
+        text-decoration: underline;
       }
 
       &.active {
@@ -101,56 +97,68 @@
 //MOBILE NAV BTN
 .nav_button {
   display: none;
-
+  height: 30px;
+  width: 30px;
+  margin: 10px 0;
+  position: relative;
 
   @include screen(1023px) {
     display: block;
   }
-}
 
-.ham {
-  cursor: pointer;
-  transition: transform 400ms;
-  user-select: none;
+  .ham {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
 
+    &.active {
+      .hamburger {
+        background: rgba(0, 0, 0, 0);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0);
 
-  .line {
-    fill: none;
-    transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
-    stroke: #000000;
-    stroke-width: 5.5;
-    stroke-linecap: round;
-  }
+        &:before {
+          top: 0;
+          transform: rotate(45deg);
+        }
 
-  .top {
-    stroke-dasharray: 40 160;
-  }
-
-  .middle {
-    stroke-dasharray: 40 142;
-    transform-origin: 50%;
-    transition: transform 400ms;
-  }
-
-  .bottom {
-    stroke-dasharray: 40 85;
-    transform-origin: 50%;
-    transition: transform 400ms, stroke-dashoffset 400ms;
-  }
-
-  &.active {
-    transform: rotate(45deg);
-
-    .top {
-      stroke-dashoffset: -64px;
+        &:after {
+          top: 0;
+          transform: rotate(135deg);
+          box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+        }
+      }
     }
 
-    .middle {
-      transform: rotate(90deg);
-    }
+    .hamburger {
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0;
+      width: 30px;
+      height: 5px;
+      position: absolute;
+      background: $colorTxt;
+      transition: 0.5s;
+      border-radius: 3px;
 
-    .bottom {
-      stroke-dashoffset: -64px;
+      &:before {
+        top: -12px;
+      }
+
+      &:after {
+        top: 12px;
+      }
+
+      &:before,
+      &:after {
+        content: '';
+        position: absolute;
+        width: 30px;
+        height: 5px;
+        background: $colorTxt;
+        transition: 0.5s;
+        border-radius: 3px
+      }
     }
   }
 }

@@ -28,13 +28,9 @@
         </nav>
 
         <div class="nav_button" id="mobNavBtn">
-            <svg class="ham" viewBox="0 0 100 100" width="60">
-                <path class="line top"
-                      d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20"/>
-                <path class="line middle" d="m 30,50 h 40"/>
-                <path class="line bottom"
-                      d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20"/>
-            </svg>
+            <div class="ham">
+                <div class="hamburger"></div>
+            </div>
         </div>
     </div>
 </header>
@@ -44,58 +40,92 @@
     <div class="main_block cnt_full">
 
         <section class="cnt cnt_list">
-
-
-            <div class="blk_1">
-                <p>If you need a little tractor work done you have come to the right place. Whether you
+            <div class="main_bg_blk"></div>
+            <div class="main_description_blk">
+                <p class="txt">If you need a little tractor work done you have come to the right place. Whether you
                     are looking for landscape grading, bush hogging, finish mowing, or just need to
                     move a pile of dirt, <span>Tractor for Hire</span> has just what you need.</p>
             </div>
-            <div class="blk_2">
-                <span>Our pride and joy is a </span>
-                <h1>John Deere 4410</h1>
-                <p>, 4WD with a 35 hp, liquid-cooled, diesel engine. The front end loader is a JD 430
+            <div class="main_title_blk">
+                <span class="txt">Our pride and joy is a </span>
+                <h1 class="txt_2">John Deere 4410</h1>
+                <p class="txt_3">, 4WD with a 35 hp, liquid-cooled, diesel engine. The front end loader is a JD 430
                     and can lift over 1,000 pounds. It has a breakout capacity of over 3,200 pounds.</p>
             </div>
-            <div class="blk_3">
+            <div class="main_pic_blk">
                 <img src="img/pic_01.png" alt="">
             </div>
-            <div class="blk_4">
-                <h2><span>Before starting </span>lanscape works, we recommend that you check your insurance. As a
+            <div class="main_subtitle_blk">
+                <h2 class="txt"><span>Before starting </span>lanscape works, we recommend that you check your insurance.
+                    As a
                     precaution.</h2>
             </div>
-            <div class="blk_5">
-                <h3>We have selected the most reliable insurance companies for you</h3>
+
+
+
+
+            <div class="company_title_blk">
+                <h3 class="txt">We have selected the most reliable insurance companies for you</h3>
             </div>
-            <div class="blk_6">
-                <p>Compare perfect insurance plan from best insurance companies
+            <div class="company_description_blk">
+                <p class="txt">Compare perfect insurance plan from best insurance companies
                     and <b>save up to $50/month</b></p>
             </div>
-            <div class="blk_7">
+            <div class="company_list_blk">
                 <h1>LIST RATING</h1>
             </div>
-            <div class="blk_8">
+            <div class="company_pic_blk">
                 <img src="img/pic_02.png" alt="">
 
             </div>
-            <div class="blk_9">
+            <div class="company_form_blk">
                 <form action="" class="find_offers_form">
-                    <h3>Find more offers for you.
+                    <h3 class="txt">Find more offers for you.
                         <span>Its FREE!</span></h3>
-                    <div class="input_group checkbox_group">
-                        <label for="are_your_insured">Are you insured?</label>
-                        <input id="are_your_insured" type="checkbox">
+                    <div class="form_group input_group input_icon zip_code">
+                        <label for="zip_code">Zip code:</label>
+                        <i class="ic__location"></i>
+                        <input id="zip_code" type="text" value="" placeholder="23232">
                     </div>
-                    <div class="input_group checkbox_group">
-                        <label for="are_your_married">Married</label>
-                        <input id="are_your_married" type="checkbox">
+
+
+                    <div class="form_group select_group your_age">
+                        <label for="your age">Your age:</label>
+                        <select name="" id="your age">
+                            <option>15 - 25</option>
+                            <option>25 - 35</option>
+                            <option>35 - 45</option>
+                            <option>45 - 55</option>
+                        </select>
                     </div>
-                    <div class="input_group checkbox_group">
-                        <label for="are_your_homeowner">Homeowner</label>
-                        <input id="are_your_homeowner" type="checkbox">
-                    </div>
+
+                   <div class="checkbox_list">
+                       <div class="form_group checkbox_group">
+                           <input id="are_your_insured" type="checkbox">
+                           <label for="are_your_insured" class="ic__checked"><span>Are you insured?</span></label>
+                       </div>
+                       <div class="form_group checkbox_group">
+                           <input id="are_your_married" type="checkbox">
+                           <label for="are_your_married" class="ic__checked"><span>Married</span></label>
+                       </div>
+                       <div class="form_group checkbox_group">
+                           <input id="are_your_homeowner" type="checkbox">
+                           <label for="are_your_homeowner" class="ic__checked"><span>Homeowner</span></label>
+                       </div>
+                   </div>
+
+
+
+
+
+                    <button class="button submit_button icon_button"><i class="ic__search"></i>
+                        <span>Find the perfect quotes</span></button>
+
+
                 </form>
             </div>
+            <div class="company_bg_blk"></div>
+
 
         </section>
 
