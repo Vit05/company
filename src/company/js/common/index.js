@@ -10,3 +10,12 @@ document.addEventListener('DOMContentLoaded', function () {
         mobNavBtn.childNodes[1].classList.toggle('active')
     })
 });
+
+var swiper = new Swiper('.leader_slider .swiper-container', {
+    slidesPerView:1,
+    loop:true,
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+});

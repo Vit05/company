@@ -1,4 +1,4 @@
-//@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700');
+@import url('https://fonts.googleapis.com/css?family=Barlow:400,500,700');
 @import '_font.scss';
 @import "mixines";
 @import 'icon/style.css';
@@ -14,7 +14,7 @@ body {
 
 
 .cnt {
-  max-width: 1280px;
+  max-width: 1300px;
   width: 100%;
   margin: auto;
 
@@ -48,6 +48,7 @@ main {
 .button {
   outline: 0;
   border: 0;
+  text-decoration: none;
 
   &:focus {
     outline: 0;
@@ -55,9 +56,7 @@ main {
 }
 
 //CHECKBOX
-
 .checkbox_group {
-  //outline: 1px solid red;
   position: relative;
   padding-left: 26px;
   margin: 10px 0;
@@ -111,7 +110,6 @@ main {
 }
 
 .select_group {
-  //outline: 1px solid green;
   select {
     cursor: pointer;
     @include font-size(18px);
@@ -223,4 +221,104 @@ main {
     }
   }
 
+}
+
+//SLIDER
+.swiper-container {
+  overflow: hidden;
+
+  .swiper-slide {
+    display: flex;
+    width: 100%;
+  }
+}
+
+
+//NEWEST BLOG LIST BLOCK
+.newest_blog_blk {
+  padding-bottom: 50px;
+
+  .title {
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 35px;
+    color: $colorTxt;
+    margin-bottom: 20px;
+  }
+
+
+  .list_post {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    @include screen(1300px) {
+      justify-content: center;
+    }
+  }
+
+  .blog_post {
+    padding: 10px;
+    max-width: 300px;
+    width: 100%;
+    background: #F7F6F2;
+    border-radius: 10px;
+
+    @include screen(1300px) {
+      margin: 10px;
+    }
+
+    @include screen(425px) {
+      max-width: none;
+      margin: 5px 0;
+    }
+
+    .post_pic {
+      margin-bottom: 30px;
+    }
+
+    .post_title {
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 25px;
+      margin-bottom: 20px;
+      color: #147939;
+      padding: 0 20px;
+    }
+
+    .post_description {
+      padding: 0 20px;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 20px;
+      color: $colorTxt;
+    }
+
+    .post_button {
+      background-color: transparent;
+      border: 2px solid #147939;
+      box-sizing: border-box;
+      border-radius: 10px;
+      width: 130px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #147939;
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 14px;
+      text-align: center;
+      letter-spacing: 0.857142px;
+      text-transform: uppercase;
+      margin: 20px;
+      transition: background-color ease-in-out .3s;
+
+      &:hover {
+        background-color: #147939;
+        color: #fff;
+      }
+    }
+  }
 }
