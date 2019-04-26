@@ -19,8 +19,8 @@
 
   a {
     text-decoration: none;
-    font-weight: 400;
-    @include font-size(14px);
+    font-weight: $fontMedium;
+    font-size:14px;
     line-height: 1;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -53,7 +53,7 @@
       padding: 50px 0;
 
       &.in {
-        transition: all .3s ease-in-out;
+        @include trans();
         opacity: 1;
         height: calc(100% - 70px);
         position: fixed;
@@ -84,7 +84,7 @@
       }
 
       &.active {
-        font-weight: 700;
+        font-weight: $fontBold;
 
         &:after {
           height: 20px;

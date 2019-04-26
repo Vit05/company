@@ -9,7 +9,7 @@
   font-style: normal;
 }
 
-[class^="ic__"], [class*=" ic__"] {
+[class^="ic__"]:before, [class*=" ic__"]:before {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icomoon' !important;
   speak: none;
@@ -26,6 +26,9 @@
 
 .ic__arrow_down:before {
   content: "\e900";
+}
+.ic__arrow_right:before {
+  content: "\e902";
 }
 .ic__checked:before {
   content: "\e903";

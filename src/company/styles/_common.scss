@@ -1,11 +1,20 @@
-@import url('https://fonts.googleapis.com/css?family=Barlow:400,500,700');
-@import '_font.scss';
-@import "mixines";
+@import "reset";
 @import 'icon/style.css';
+@import "var";
+@import 'font';
+@import "mixines";
+@import "header";
+@import "footer";
+@import "form";
+
+//PAGES
+//@import "home";
+//@import "blog";
+
 
 body {
-  font-family: 'Inter', sans-serif;
-  font-size: 16px;
+  font-family: $baseFontFamily;
+  font-size: $baseFontSize;
 
   * {
     box-sizing: border-box;
@@ -27,13 +36,17 @@ body {
   }
 }
 
+
+.no_scroll{
+  overflow: hidden;
+}
 .cnt_full {
   width: 100%;
 }
 
 
 b {
-  font-weight: 700;
+  font-weight: $fontBold;
 }
 
 img {
@@ -55,173 +68,6 @@ main {
   }
 }
 
-//CHECKBOX
-.checkbox_group {
-  position: relative;
-  padding-left: 26px;
-  margin: 10px 0;
-
-  label {
-    span {
-      font-family: Inter, sans-serif;
-    }
-  }
-
-  input[type=checkbox] + label {
-    display: block;
-    cursor: pointer;
-    font-size: 10px;
-    line-height: 1.4;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-  }
-
-  input[type=checkbox] {
-    display: none;
-  }
-
-  input[type=checkbox] + label:before {
-    position: absolute;
-    left: 0;
-    content: "\e903";
-    display: inline-block;
-    font-size: 9px;
-    width: 16px;
-    height: 16px;
-    box-sizing: border-box;
-    padding-left: 2px;
-    padding-top: 3px;
-    margin-right: 10px;
-    color: transparent;
-    transition: .2s;
-    background: linear-gradient(360deg, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.5) 100%), #B8B7AF;
-    background-blend-mode: overlay, normal;
-    border-radius: 3px;
-  }
-
-  input[type=checkbox] + label:active:before {
-    transform: scale(0);
-  }
-
-  input[type=checkbox]:checked + label:before {
-    background-color: $colorGreen;
-    color: #fff;
-  }
-}
-
-.select_group {
-  select {
-    cursor: pointer;
-    @include font-size(18px);
-    line-height: 1;
-    color: #252828;
-    width: 100%;
-    padding: 5px 35px 5px 5px;
-    border: 1px solid #E1E0DA;
-    height: 50px;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    background-image: url(../img/icon/arrow_down.svg);
-    background-position: calc(100% - 15px) 50%;
-    background-size: 13px;
-    background-repeat: no-repeat;
-    background-color: #ffffff;
-
-    &:focus, &:active {
-      outline: 0;
-    }
-
-    option {
-      padding: 10px 0;
-    }
-  }
-
-  label {
-    @include font-size(10px);
-    font-weight: 500;
-    line-height: 1.4;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    color: #252828;
-    margin-bottom: 10px;
-    display: block;
-  }
-}
-
-
-.input_group {
-  &.input_icon {
-    position: relative;
-
-    i {
-      position: absolute;
-      left: 10px;
-      bottom: 7px;
-      transform: translateY(-50%);
-      color: #252828;
-      font-size: 20px;
-    }
-
-    input {
-      padding: 15px 30px;
-      text-align: center;
-    }
-  }
-
-  label {
-    font-weight: 500;
-    @include font-size(10px);
-    line-height: 1.4;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    color: #252828;
-    margin-bottom: 10px;
-    display: block;
-  }
-
-  input {
-    cursor: pointer;
-    @include font-size(18px);
-    line-height: 1;
-    color: #252828;
-    width: 100%;
-    padding: 5px 35px 5px 5px;
-    border: 1px solid #E1E0DA;
-    height: 50px;
-  }
-}
-
-.submit_button {
-  height: 80px;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  color: #fff;
-  justify-content: space-around;
-  font-weight: bold;
-  font-size: 16px;
-  line-height: normal;
-  text-align: center;
-  letter-spacing: 1.14286px;
-  text-transform: uppercase;
-  background: $colorGreen;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.200748);
-  border-radius: 10px;
-  cursor: pointer;
-  transition: background-color ease-in-out .3s;
-
-  &:hover {
-    background-color: darken($colorGreen, 10%);
-  }
-
-  @include screen(425px) {
-    i {
-      display: none;
-    }
-  }
-
-}
 
 //SLIDER
 .swiper-container {
@@ -230,95 +76,5 @@ main {
   .swiper-slide {
     display: flex;
     width: 100%;
-  }
-}
-
-
-//NEWEST BLOG LIST BLOCK
-.newest_blog_blk {
-  padding-bottom: 50px;
-
-  .title {
-    font-weight: 700;
-    font-size: 30px;
-    line-height: 35px;
-    color: $colorTxt;
-    margin-bottom: 20px;
-  }
-
-
-  .list_post {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-
-    @include screen(1300px) {
-      justify-content: center;
-    }
-  }
-
-  .blog_post {
-    padding: 10px;
-    max-width: 300px;
-    width: 100%;
-    background: #F7F6F2;
-    border-radius: 10px;
-
-    @include screen(1300px) {
-      margin: 10px;
-    }
-
-    @include screen(425px) {
-      max-width: none;
-      margin: 5px 0;
-    }
-
-    .post_pic {
-      margin-bottom: 30px;
-    }
-
-    .post_title {
-      font-weight: 500;
-      font-size: 20px;
-      line-height: 25px;
-      margin-bottom: 20px;
-      color: #147939;
-      padding: 0 20px;
-    }
-
-    .post_description {
-      padding: 0 20px;
-      font-weight: 500;
-      font-size: 14px;
-      line-height: 20px;
-      color: $colorTxt;
-    }
-
-    .post_button {
-      background-color: transparent;
-      border: 2px solid #147939;
-      box-sizing: border-box;
-      border-radius: 10px;
-      width: 130px;
-      height: 30px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #147939;
-      font-weight: 700;
-      font-size: 12px;
-      line-height: 14px;
-      text-align: center;
-      letter-spacing: 0.857142px;
-      text-transform: uppercase;
-      margin: 20px;
-      transition: background-color ease-in-out .3s;
-
-      &:hover {
-        background-color: #147939;
-        color: #fff;
-      }
-    }
   }
 }

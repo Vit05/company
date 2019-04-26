@@ -6,7 +6,7 @@
 
   .cnt {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
 
     @include screen(1024px) {
       flex-direction: column;
@@ -17,10 +17,11 @@
     .footer_navigation {
       display: flex;
       align-items: center;
-      margin: 10px 0;
+      margin: 10px 0 10px 40px;
 
       @include screen(767px) {
         flex-direction: column;
+        margin: 10px 0;
       }
 
       li {
@@ -33,7 +34,7 @@
 
       a {
         font-size: 14px;
-        font-weight: 500;
+        font-weight: $fontMedium;
         letter-spacing: 2px;
         text-transform: uppercase;
         color: #4FB355;

@@ -1,0 +1,169 @@
+//CHECKBOX
+.checkbox_group {
+  position: relative;
+  margin: 10px 0;
+  padding-top: 1px;
+
+  label {
+    user-select: none;
+    padding-left: 26px;
+  }
+
+  input[type=checkbox] + label {
+    display: block;
+    font-size: 10px;
+    line-height: 1.4;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+
+  input[type=checkbox] {
+    display: none;
+  }
+
+  input[type=checkbox] + label:before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    content: "\e903";
+    display: inline-block;
+    font-size: 9px;
+    width: 16px;
+    height: 16px;
+    box-sizing: border-box;
+    padding-left: 2px;
+    padding-top: 3px;
+    margin-right: 10px;
+    color: transparent;
+    transition: .2s;
+    background: linear-gradient(360deg, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.5) 100%), #B8B7AF;
+    background-blend-mode: overlay, normal;
+    border-radius: 3px;
+  }
+
+  input[type=checkbox] + label:active:before {
+    //transform: scale(0);
+  }
+
+  input[type=checkbox]:checked + label:before {
+    background-color: $colorGreen;
+    color: #fff;
+  }
+}
+
+//SELECT
+.select_group {
+  select {
+    cursor: pointer;
+    font-size: 18px;
+    line-height: 1;
+    color: #252828;
+    width: 100%;
+    padding: 5px 35px 5px 5px;
+    border: 1px solid #E1E0DA;
+    height: 50px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url(../img/icon/arrow_down.svg);
+    background-position: calc(100% - 15px) 50%;
+    background-size: 13px;
+    background-repeat: no-repeat;
+    background-color: #ffffff;
+
+    &:focus, &:active {
+      outline: 0;
+    }
+
+    option {
+      padding: 10px 0;
+    }
+  }
+
+  label {
+    font-size: 10px;
+    font-weight: $fontMedium;
+    line-height: 1.4;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: #252828;
+    margin-bottom: 10px;
+    display: block;
+  }
+}
+
+//INPUT
+.input_group {
+  &.input_icon {
+    position: relative;
+
+    i {
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      height: auto;
+      color: #252828;
+      font-size: 20px;
+    }
+
+    input {
+      padding: 15px 30px;
+      text-align: center;
+    }
+  }
+
+  label {
+    font-weight: $fontMedium;
+    font-size: 10px;
+    line-height: 1.4;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: #252828;
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  input {
+     font-size:18px;
+    line-height: 1;
+    color: #252828;
+    width: 100%;
+    padding: 5px 35px 5px 5px;
+    border: 1px solid #E1E0DA;
+    height: 50px;
+  }
+}
+
+
+.submit_button {
+  height: 80px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  justify-content: space-around;
+  font-weight: $fontBold;
+  font-size: 16px;
+  line-height: normal;
+  text-align: center;
+  letter-spacing: 1.14286px;
+  text-transform: uppercase;
+  background: $colorGreen;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.200748);
+  border-radius: 10px;
+  cursor: pointer;
+  @include trans(background-color);
+  transition:  ease-in-out .3s;
+
+  &:hover {
+    background-color: darken($colorGreen, 10%);
+  }
+
+  @include screen(425px) {
+    height: 70px;
+    i {
+      display: none;
+    }
+  }
+
+}
